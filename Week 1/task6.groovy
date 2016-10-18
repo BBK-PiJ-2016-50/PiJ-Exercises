@@ -1,5 +1,8 @@
+println "Enter two numbers to find the quotient and the remainder"
+print "Enter the first number: "
 String str = System.console().readLine()
 int numA = Integer.parseInt(str)
+print "Enter the second number: "
 String str2 = System.console().readLine()
 int numB = Integer.parseInt(str2)
 int quotient = 0
@@ -17,5 +20,5 @@ while (numA > current) {
 		break;
 	}
 }
-println "quotient: " + quotient
-println "remainder: " + remainder
+println "The quotient is: " + quotient
+println "The remainder is: " + remainder
