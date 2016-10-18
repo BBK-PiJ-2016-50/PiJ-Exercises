@@ -1,3 +1,4 @@
+println "Enter an arbitrarily long sequence of numbers ending in -1: "
 int max = 0
 boolean finished = false
 while (!finished) {
@@ -9,4 +10,4 @@ while (!finished) {
 		finished = true
 	}
 }
-println "largest number: " + max
+println "The largest number in the sequence: " + max
