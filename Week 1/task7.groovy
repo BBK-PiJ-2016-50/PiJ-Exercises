@@ -1,7 +1,11 @@
+println "Enter three numbers for sorting from lowest to highest"
+print "Enter the first number: "
 String str = System.console().readLine()
 int num1 = Integer.parseInt(str)
+print "Enter the second number: "
 String str2 = System.console().readLine()
 int num2 = Integer.parseInt(str2)
+print "Enter the third number: "
 String str3 = System.console().readLine()
 int num3 = Integer.parseInt(str3)
 
@@ -37,4 +41,4 @@ if (num1 > num2 && num1 > num3) {
 		min = num1
 	}
 }
-println "sequence: " + min + ", " + med + ", " + max
+println "The numbers in sequence: " + min + ", " + med + ", " + max
