@@ -1,5 +1,3 @@
-//determine if point falls inside or outside of rectangle
-
 class Rectangle {
 	Point upLeft;
 	Point downRight;
