@@ -13,7 +13,7 @@ rectangle.upLeft = new Point()
 rectangle.downRight = new Point()
 
 //create x and y coordinates for upLeft point
-println "Fine the perimeter and area of a rectangle based on four coordinate points."
+println "Find the perimeter and area of a rectangle based on four coordinate points."
 print "Enter the X coordinate for the upLeft point: "
 String str1x = System.console().readLine()
 rectangle.upLeft.x = Double.parseDouble(str1x)
