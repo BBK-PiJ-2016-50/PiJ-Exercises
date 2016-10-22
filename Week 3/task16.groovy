@@ -20,11 +20,10 @@ for (count=0; count < str.length(); count++) {
 //halve the resulting number
 int num = Integer.parseInt(pointsRemoved)
 int halfNum = num / 2
-String numNoDec = String.valueOf(halfNum)
-
-String finalNum = ""
 
 //add the decimal back into the string at correct num of digits from right
+String numNoDec = String.valueOf(halfNum)
+String finalNum = ""
 for (count=0; count < numNoDec.length(); count++) {
 	String current = numNoDec.substring(count, count + 1)
 	if ((numNoDec.length() - decPoints) == count) {
