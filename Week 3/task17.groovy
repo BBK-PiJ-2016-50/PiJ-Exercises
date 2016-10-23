@@ -1,28 +1,29 @@
-//PART 1
 println "Welcome to My Mail Server!"
 
 String fromEmail = ""
 String toEmail = ""
 String emailMsg = ""
 
+//PART 1
 //provide cmd prompt to user to input MAIL FROM info.  Perform validation
-boolean correctInput = false
-while (!correctInput) {
+boolean correctFromInput = false
+while (!correctFromInput) {
 	print ">>> "
 	String from = System.console().readLine()
+	checkQuit(from)
 	if (from.length() < 14) {
 		println "Invalid command"
 	} else {
 		//check for correct keyword
 		if (from.substring(0, 11) != "MAIL FROM: ") {
-			println "Invalid command (fromtext)"
+			println "Invalid command"
 		} else {
 			//check for correctly formatted email address
 			String email = from.substring(11)
 			if (checkEmail(email)) {
 				println "OK"
 				fromEmail = email
-				correctInput = true
+				correctFromInput = true
 			} else {
 				println "Invalid email address"	
 			}
@@ -31,28 +32,66 @@ while (!correctInput) {
 }
 
 //PART 2
-//provide cmd prompt to user
-//should read a recipient - "RCPT FROM: <email-address>"
-//check that cmd is properly written and email address is valid (@ sign, must not be first or last char)
-//if error then tell user and get them to enter again
-//if correct then output OK
+//provide cmd prompt to user to input RCPT TO info.  Perform validation
+boolean correctToInput = false
+while (!correctToInput) {
+	print ">>> "
+	String to = System.console().readLine()
+	checkQuit(to)
+	if (to.length() < 12) {
+		println "Invalid command"
+	} else {
+		//check for correct keyword
+		if (to.substring(0, 9) != "RCPT TO: ") {
+			println "Invalid command"
+		} else {
+			//check for correctly formatted email address
+			String email = to.substring(9)
+			if (checkEmail(email)) {
+				println "OK"
+				toEmail = email
+				correctToInput = true
+			} else {
+				println "Invalid email address"	
+			}
+		}
+	}
+}
 
 //PART 3
-//provide cmd prompt to user
-//should read - "DATA"
-//provide cmd prompt to user
-//write email message, line after line (while loop)
-//terminates with a line with a dot
+//provide cmd prompt to user to input email text
+boolean correctDataInput = false
+while (!correctDataInput) {
+	print ">>> "
+	String data = System.console().readLine()
+	//check for correct keyword
+	if (data != "DATA") {
+		println "Invalid command"
+	} else {
+		//input message and terminate with a dot
+		boolean dot = false
+		while (!dot) {
+			String msg = System.console().readLine()
+			checkQuit(msg)
+			if (msg != ".") {
+				emailMsg += msg + "\n"
+			} else {
+				dot = true
+			}
+		correctDataInput = true	
+		}
+	}
+}
 
 //PART 4
-//write out on screen who is sending the email
-//write out who is receiving the email
-//write out what the email says
+println "Sending email..."
+println "from: " + fromEmail
+println "to: " + toEmail
+println emailMsg
+println "...done!"
 
-//at any time if QUIT entered then program must terminate (wrap all text input in a method to check for QUIT)
-//if any command RCPT, MAIL or DATA entered at wrong time, then output 'invalid command'
 
-
+//method for checking email addresses correctly formatted
 boolean checkEmail(String email) {
 	boolean existAtChar = false
 	for (c=0; c < email.length(); c++) {
@@ -65,5 +104,15 @@ boolean checkEmail(String email) {
 		return false
 	} else {
 		return true
+	}
+}
+
+//method for checking if user wants to quit the program
+void checkQuit(String str) {
+	if (str == "QUIT") {
+		println "Bye!"
+		System.exit(0)
+	} else {
+		return
 	}
 }
