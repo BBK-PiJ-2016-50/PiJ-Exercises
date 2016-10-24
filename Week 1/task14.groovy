@@ -1,4 +1,4 @@
-//first 1000 primes
+println "Displays the first 1000 prime numbers:"
 int totalPrimes = 0
 int currentNumber = 2
 while (totalPrimes < 1000) {

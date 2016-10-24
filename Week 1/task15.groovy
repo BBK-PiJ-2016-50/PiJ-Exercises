@@ -18,4 +18,4 @@ while (!guessed) {
 		guesses++
 	}
 }
-println "You needed " + guesses + "guesses."
+println "You needed " + guesses + " guesses."

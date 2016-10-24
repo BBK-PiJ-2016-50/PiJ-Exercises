@@ -1,3 +1,4 @@
+println "Enter an arbitrarily long sequence of numbers ending in -1"
 String num_increase = ""
 boolean finished = false
 String str2 = System.console().readLine()
@@ -11,10 +12,8 @@ while (!finished) {
 	} else if (num - prev_num == 1 && num_increase != "no") {
 		num_increase = "yes"
 		prev_num = num
-		println "yes"
 	} else {
 		num_increase = "no"
-		println "no"
 	} 
 }
-println "Did numbers increase: " + num_increase
+println "Were numbers consectutive and increasing? " + num_increase

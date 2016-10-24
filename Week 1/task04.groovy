@@ -1,3 +1,4 @@
+print "Enter a number to see if it is a prime: "
 String str = System.console().readLine()
 int num = Integer.parseInt(str)
 int counter = 2
@@ -17,8 +18,8 @@ if (num == 1) {
 }
 
 if (isPrime) {
-	println "is a prime"
+	println num + " is a prime"
 } else {
-	println "is not a prime"
+	println num + " is not a prime"
 }
 

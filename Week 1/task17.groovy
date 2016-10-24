@@ -1,3 +1,4 @@
+print "Enter a number to find its closest prime number: "
 String str = System.console().readLine()
 int num = Integer.parseInt(str)
 int closestPrimeBelow = 0
