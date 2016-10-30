@@ -74,37 +74,81 @@ while (cardCounter <= 5) {
 	cardCounter++
 }
 
-//check for same suit required in straight flush and flush
 boolean sameSuit = false
+boolean consecutive = false
+boolean fourSameRank = false
+boolean threeSameRank = false
+boolean fullHouse = false
+boolean twoPair = false
+boolean pair = false
+
+//check for same suit
 if (card1suit == card2suit && card1suit == card3suit && card1suit == card4suit && card1suit == card5suit) {
 	sameSuit = true
 }
 
-//check for 4 cards
-def rankList = [card1rank, card2rank, card3rank, card4rank, card5rank]
-boolean rankCountFour = false
-if (rankList.count{it == card1rank} == 4 || rankList.count{it == card2rank} == 4) {
-	rankCountFour = true
+//check for pair
+if (card1rank == card2rank || card1rank == card3rank || card1rank == card4rank || card1rank == card5rank || 
+	card2rank == card3rank || card2rank == card4rank || card2rank == card5rank || card3rank == card4rank || 
+	card3rank == card5rank || card4rank == card5rank) {
+	pair = true
 }
 
-//check for same rank - 2 cards
-boolean rankCountTwo
-if (rankList.count{it == card1rank} == 2 || rankList.count{it == card2rank} == 2 || rankList.count{it == card3rank} == 2 || rankList.count{it == card4rank} == 2) {
-	rankCountTwo = true
-}
-
-//check for same full house
 //check for two pair
+if (card1rank == card2rank || card1rank == card3rank || card1rank == card4rank || card1rank == card5rank && 
+	card2rank == card3rank || card2rank == card4rank || card2rank == card5rank || card3rank == card4rank || 
+	card3rank == card5rank || card4rank == card5rank) {
+	twoPair = true
+} else if (card2rank == card3rank || card2rank == card4rank || card2rank == card5rank && card3rank == card4rank || 
+	card3rank == card5rank || card4rank == card5rank) {
+	twoPair true
+} else if (card3rank == card4rank || card3rank == card5rank && card4rank == card5rank) {
+	twoPair true
+}
 
-//check for consectutive cards
+//check for 3 of a kind
+if (card1rank == card2rank && card1rank == card3rank || card1rank == card2rank && card1rank == card4rank || 
+	card1rank == card2rank && card1rank == card5rank || card2rank == card3rank && card2rank == card4rank || 
+	card2rank == card3rank && card2rank == card5rank || card3rank == card4rank && card3rank == card5rank) {
+	threeSameRank = true
+}
 
-//check hands
-//check for straight flush - same suit and consecutive ranks
-//check for poker - 4 of 5 card have same rank
-//check for full house - 3 of a kind and 2 of a kind
-//check for flush - all same suit, not consecutive
-//check for straight - consecutive rank but not same suit
-//check for three of a kind - 3 cards have same rank
-//check for two pairs - see pair
-//check for a pair - two of the cards have the same rank
-//else nothing
+//check for 4 of a kind
+if (card1rank == card2rank && card1rank == card3rank && card1rank == card4rank || card1rank == card3rank && 
+	card1rank == card4rank && card1rank == card5rank) {
+	fourSameRank = true
+}
+
+//check for full house
+if (card1rank == card2rank && card1rank == card3rank && card4rank == card5rank || card1rank == card3rank && 
+	card1rank == card4rank && card2rank == card5rank || card1rank == card4rank && card1rank == card5rank && 
+	card2rank == card3rank || card2rank == card3rank && card2rank == card4rank && card1rank == card5rank ||
+	card2rank == card4rank && card2rank == card5rank && card1rank == card3rank || card3rank == card4rank && 
+	card3rank == card5rank && card1rank == card2rank) {
+	fullHouse = true
+}
+
+//check for consecutive cards
+
+
+
+
+//check for best hand
+print "Your best hand is: "
+if (sameSuit && consecutive) {
+	println "STRAIGHT FLUSH!"
+} else if (fourSameRank) {
+	println "POKER!"
+} else if (fullHouse) {
+	println "FULL HOUSE!"
+} else if (sameSuit) {
+	println "STRAIGHT!"
+} else if (threeSameRank) {
+	println "THREE OF A KIND!"
+} else if (twoPair) {
+	println "TWO PAIRS!"
+} else if (pair) {
+	println "PAIR!"
+} else {
+	println "You got nothing!"
+}
