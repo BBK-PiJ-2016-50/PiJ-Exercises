@@ -40,8 +40,35 @@ int hexadecimal2decimal(String hex) {
 	return binary2decimal(bin)
 }
 
+//convert decimal to hex
 String decimal2hexadecimal(String dec) {
-	println ""
+	int decimal = Integer.parseInt(dec)
+	//ensure binary number represented by 32 bits
+	String bin = decimal2binary(decimal)
+	while (bin.length() != 32) {
+		bin = '0' + bin
+	}	
+	String hex = "0x"
+	for (int c=0; c < bin.length(); c+=4) {
+		String cur4Bits = bin.substring(c, c+4)
+		int binConvert = binary2decimal(cur4Bits)
+		if (binConvert == 10) {
+			hex += 'a'
+		} else if (binConvert == 11) {
+			hex += 'b'
+		} else if (binConvert == 12) {
+			hex += 'c'
+		} else if (binConvert == 13) {
+			hex += 'd'
+		} else if (binConvert == 14) {
+			hex += 'e'
+		} else if (binConvert == 15) {
+			hex += 'f'
+		} else {
+			hex += ("" + binConvert)
+		}
+	}
+	return hex
 }
 
 
