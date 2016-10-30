@@ -26,8 +26,14 @@ double payPerYear(double total, double yrs) {
 	return perYear
 }
 
-double interestYears(double total, double mtg, double yrs) {
+double interestYears(double total, double mtg, double perYear) {
 	double interest = total - mtg
-	return payPerYear(interest, yrs)
+	return interest / perYear
 }
 
+double total = totalAmount(mtg, rate)
+double perYear = payPerYear(total, yrs)
+
+println "Total amount to be paid: " + total
+println "Money to be paid per year: " + payPerYear(total, yrs)
+println "Number of years before interest paid: " + interestYears(total, mtg, perYear)
