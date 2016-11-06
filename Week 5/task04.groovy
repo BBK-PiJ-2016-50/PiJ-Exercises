@@ -6,7 +6,7 @@ println "Call setElement method.  Change cell 2, 3 to 8: "
 matrix.setElement(2, 3, 8)
 println matrix.matrix
 
-println "Call setRow.  Change row 0 to values '2, 3, 4, 5': "
+println "Call setRow.  Change row 2 to values '2, 3, 4, 5': "
 matrix.setRow(2, "2,3,4,5,6")
 println matrix.matrix
 
