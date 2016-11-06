@@ -89,5 +89,12 @@ public class Matrix {
 		return isTri;
 	}
 	
+	public void setMatrix(String strArray) {
+		String[] strRows = strArray.split(";");
+		for (int i = 0; i <= strRows.length - 1; i++) {
+			setRow(i, strRows[i]);
+		}
+	}
+	
 }
 
