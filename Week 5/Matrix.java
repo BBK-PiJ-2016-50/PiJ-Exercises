@@ -77,5 +77,17 @@ public class Matrix {
 		}
 	}
 	
+	public boolean isSymmetrical() {
+		MatrixChecker mc = new MatrixChecker();
+		boolean isSym = mc.isSymmetrical2D(matrix);
+		return isSym;
+	}
+	
+	public boolean isTriangular() {
+		MatrixChecker mc = new MatrixChecker();
+		boolean isTri = mc.isTriangular(matrix);
+		return isTri;
+	}
+	
 }
 
