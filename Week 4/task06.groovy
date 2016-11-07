@@ -2,32 +2,34 @@ class Integer2 {
 	int value
 	
 	int getValue() {
-	
+		return value
 	}
 	
 	void setValue() {
-	
+		this.value = value
 	}
 	
 	boolean isEven() {
-	
+		if (value % 2 == 0) {
+			return true
+		} else {
+			return false
+		}
 	}
 
 	boolean isOdd() {
-	
+		return !this.isEven()
 	}
 	
 	void prettyPrint() {
-	
+		println "The value is: " + value
 	}
 	
 	String toString() {
-	
+		return "" + value
 	}
 	
 }
-
-
 
 Integer2 i2 = new Integer2();
 print "Enter a number: ";
