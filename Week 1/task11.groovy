@@ -108,7 +108,7 @@ if (card1rank == card2rank || card1rank == card3rank || card1rank == card4rank |
 
 //check for 3 of a kind
 if (card1rank == card2rank && card1rank == card3rank || card1rank == card2rank && card1rank == card4rank || 
-	card1rank == card2rank && card1rank == card5rank || card2rank == card3rank && card2rank == card4rank || 
+	card1rank == card3rank && card1rank == card5rank || card2rank == card3rank && card2rank == card4rank || 
 	card2rank == card3rank && card2rank == card5rank || card3rank == card4rank && card3rank == card5rank) {
 	threeSameRank = true
 }
@@ -130,8 +130,13 @@ if (card1rank == card2rank && card1rank == card3rank && card4rank == card5rank |
 
 //check for consecutive cards
 
-
-
+println sameSuit
+println consecutive
+println fourSameRank
+println threeSameRank
+println fullHouse
+println twoPair
+println pair
 
 //check for best hand
 print "Your best hand is: "
