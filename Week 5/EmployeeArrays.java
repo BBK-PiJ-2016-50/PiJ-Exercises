@@ -1,7 +1,7 @@
 public class EmployeeArrays {
 	
-	private String[] names = new String[5];
-	private int[] ids = new int[5];
+	private String[] names = new String[2];
+	private int[] ids = new int[2];
 	private int counter = 0;
 	
 	public void addNameToArray(String name) {

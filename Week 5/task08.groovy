@@ -24,11 +24,11 @@ while (!finished) {
 names = empArry.getNames()
 ids = empArry.getIds()
 
-println "Names that start with 'S': "
+println "Names that start with 'S' or ID is even: "
 for (int i = 0; i < names.length - 1; i++) {
-	if (names[i].toLowerCase().startsWith("s")) {
+	if (names[i] != null && names[i].startsWith("S")) {
 		println names[i]
-	} else if (ids[i] % 2 == 0) {
+	} else if (names[i] != null && ids[i] % 2 == 0) {
 		println names[i]
 	}
 }
