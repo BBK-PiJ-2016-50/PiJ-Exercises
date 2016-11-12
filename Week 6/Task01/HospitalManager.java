@@ -49,13 +49,13 @@ public class HospitalManager {
 			return;
 		}
 		
-		current = firstPatient;
-		while (current.getNextPatient() != null) {
+		Patient current = firstPatient;
+		
+		do {
 			System.out.println ("Name: "+current.getName()+"\t Age: "+current.getAge()+"\t Illness: "
 			+current.getIllness());
 			current = current.getNextPatient();
-		}
-		System.out.println ("Name: "+current.getName()+"\t Age: "+current.getAge()+"\t Illness: "
-			+current.getIllness()+"\n");
+		} while (current != null);
+
 	}
 }
