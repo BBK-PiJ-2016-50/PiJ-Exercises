@@ -17,9 +17,9 @@ public class HospitalManager {
 	}
 	
 	public boolean deletePatient(String name) {
-		boolean done = false;
 		if (firstPatient == null) {
 			System.out.println("No Records to Delete");
+			return false;
 		}
 		
 		if (firstPatient.getName().equals(name)) {
@@ -28,7 +28,7 @@ public class HospitalManager {
 			} else {
 				firstPatient = firstPatient.getNextPatient();
 			} 
-			done = true;
+			return true;
 		}
 		
 		Patient current = firstPatient;
@@ -40,7 +40,7 @@ public class HospitalManager {
 			}
 			current = current.getNextPatient();
 		}
-		return done;
+		return false;
 	}
 	
 	public void printRecords(){
