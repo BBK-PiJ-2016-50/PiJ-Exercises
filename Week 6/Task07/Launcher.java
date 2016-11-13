@@ -4,7 +4,6 @@ public class Launcher {
 		int[] intArray = {1, 2, 3, 4, 5};
 		ArrayUtilities myUtil = new ArrayUtilities();
 		myUtil.array2list(intArray);
-		
 	}
 	
 }

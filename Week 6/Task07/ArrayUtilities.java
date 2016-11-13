@@ -1,20 +1,23 @@
 public class ArrayUtilities {
 	
-	public static intObj array2list(int[] intArray) {
+	public static void array2list(int[] intArray) {
 		
-		intObj currentInt = null;
-		intObj prevInt = null;
-		
+		IntObj firstNum = null;
+		IntObj current = null;
+	
 		for (int i = 0; i <= intArray.length - 1; i++) {
-			currentInt = new intObj(intArray[i]);
-			if (prevInt == null) {
-				prevInt = currentInt;
+			
+			IntObj newInt = new IntObj(intArray[i]);
+			
+			if (firstNum == null) {
+				firstNum = newInt;
 			} else {
-				prevInt.nextInt = currentInt;
-				prevInt = currentInt;
+				current = firstNum;
+				while (current.getNextNum() != null) {
+					current = current.getNextNum();
+				}
+				current.setNextNum(newInt);
 			}
 		}
-		return currentInt;	
-	}
-		
+	}		
 }
