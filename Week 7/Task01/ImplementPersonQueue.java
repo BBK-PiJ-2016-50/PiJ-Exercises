@@ -8,11 +8,14 @@ public class ImplementPersonQueue implements PersonQueue {
 		if (firstPerson == null) {
 			firstPerson = person;
 		} else {
-			current = firstPerson; 
-			while (current.getNextPerson() != null) {
-				current = current.getNextPerson();
-			}
-			current.setNextPerson(person);
+			current = person;
+			current.setNextPerson(firstPerson);
+			firstPerson = current;	
+			//current = firstPerson; 
+			//while (current.getNextPerson() != null) {
+			//	current = current.getNextPerson();
+			//}
+			//current.setNextPerson(person);
 		}
 	}
 	
@@ -23,7 +26,9 @@ public class ImplementPersonQueue implements PersonQueue {
 		}
 		
 		if (firstPerson.getNextPerson() == null) {
-			return null;
+			retrieved = firstPerson;
+			firstPerson = null;
+			return retrieved;
 		}
 		
 		current = firstPerson;
