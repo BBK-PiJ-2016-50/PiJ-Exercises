@@ -11,11 +11,6 @@ public class ImplementPersonQueue implements PersonQueue {
 			current = person;
 			current.setNextPerson(firstPerson);
 			firstPerson = current;	
-			//current = firstPerson; 
-			//while (current.getNextPerson() != null) {
-			//	current = current.getNextPerson();
-			//}
-			//current.setNextPerson(person);
 		}
 	}
 	
