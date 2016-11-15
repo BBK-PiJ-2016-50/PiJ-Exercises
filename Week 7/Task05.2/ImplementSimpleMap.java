@@ -54,7 +54,6 @@ public class ImplementSimpleMap implements SimpleMap {
 			return;
 		}
 		
-		
 		//iterate through linked list until key found and sets to null
 		current = first;
 		while (current.getNextNode() != null) {
