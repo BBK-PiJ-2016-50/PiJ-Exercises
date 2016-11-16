@@ -1,8 +1,9 @@
 public class Launcher {
 	
 	public static void main(String[] args) {
-		int[] intArray = {1, 2, 3, 4, 5};
-		ArrayUtilities.array2list(intArray);
+		int[] intArray = {10, 2, 3, 14, 578};
+		LinkedList newList = ArrayUtilities.array2list(intArray);
+		newList.printList();
 	}
 	
 }
