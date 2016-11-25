@@ -95,36 +95,43 @@ if (card1rank == card2rank || card1rank == card3rank || card1rank == card4rank |
 }
 
 //check for two pair
-if (card1rank == card2rank || card1rank == card3rank || card1rank == card4rank || card1rank == card5rank && 
-	card2rank == card3rank || card2rank == card4rank || card2rank == card5rank || card3rank == card4rank || 
-	card3rank == card5rank || card4rank == card5rank) {
+if ((card1rank == card2rank || card1rank == card3rank || card1rank == card4rank || card1rank == card5rank) && 
+	(card2rank == card3rank || card2rank == card4rank || card2rank == card5rank || card3rank == card4rank || 
+	card3rank == card5rank || card4rank == card5rank)) {
 	twoPair = true
-} else if (card2rank == card3rank || card2rank == card4rank || card2rank == card5rank && card3rank == card4rank || 
-	card3rank == card5rank || card4rank == card5rank) {
+} else if ((card2rank == card3rank || card2rank == card4rank || card2rank == card5rank) && (card3rank == card4rank || 
+	card3rank == card5rank || card4rank == card5rank)) {
 	twoPair true
-} else if (card3rank == card4rank || card3rank == card5rank && card4rank == card5rank) {
+} else if ((card3rank == card4rank || card3rank == card5rank) && (card4rank == card5rank)) {
 	twoPair true
 }
 
 //check for 3 of a kind
-if (card1rank == card2rank && card1rank == card3rank || card1rank == card2rank && card1rank == card4rank || 
-	card1rank == card3rank && card1rank == card5rank || card2rank == card3rank && card2rank == card4rank || 
-	card2rank == card3rank && card2rank == card5rank || card3rank == card4rank && card3rank == card5rank) {
+if ((card1rank == card2rank && card1rank == card3rank) || (card1rank == card2rank && card1rank == card4rank) || 
+	(card1rank == card3rank && card1rank == card5rank) || (card1rank == card3rank && card1rank == card4rank) ||
+	(card1rank == card3rank && card1rank == card5rank) || (card1rank == card4rank && card1rank == card5rank) ||
+	(card2rank == card3rank && card2rank == card4rank) || (card2rank == card3rank && card2rank == card5rank) || 
+	(card2rank == card4rank && card2rank == card5rank) || (card3rank == card4rank && card3rank == card5rank)) {
 	threeSameRank = true
 }
 
 //check for 4 of a kind
-if (card1rank == card2rank && card1rank == card3rank && card1rank == card4rank || card1rank == card3rank && 
-	card1rank == card4rank && card1rank == card5rank) {
+if ((card1rank == card2rank && card1rank == card3rank && card1rank == card4rank) || (card1rank == card3rank && 
+	card1rank == card4rank && card1rank == card5rank)) {
 	fourSameRank = true
 }
 
 //check for full house
-if (card1rank == card2rank && card1rank == card3rank && card4rank == card5rank || card1rank == card3rank && 
-	card1rank == card4rank && card2rank == card5rank || card1rank == card4rank && card1rank == card5rank && 
-	card2rank == card3rank || card2rank == card3rank && card2rank == card4rank && card1rank == card5rank ||
-	card2rank == card4rank && card2rank == card5rank && card1rank == card3rank || card3rank == card4rank && 
-	card3rank == card5rank && card1rank == card2rank) {
+if (((card1rank == card2rank && card1rank == card3rank) && (card4rank == card5rank)) || 
+	((card1rank == card2rank && card1rank == card4rank) && (card3rank == card5rank)) || 
+	((card1rank == card2rank && card1rank == card5rank) && (card3rank == card4rank)) || 
+	((card1rank == card3rank && card1rank == card4rank) && (card2rank == card5rank)) || 
+	((card1rank == card3rank && card1rank == card5rank) && (card2rank == card4rank)) || 
+	((card1rank == card4rank && card1rank == card5rank) && (card2rank == card3rank)) || 
+	((card2rank == card3rank && card2rank == card4rank) && (card1rank == card5rank)) || 
+	((card2rank == card3rank && card2rank == card5rank) && (card1rank == card4rank)) || 
+	((card2rank == card4rank && card2rank == card5rank) && (card1rank == card3rank)) || 
+	((card3rank == card4rank && card3rank == card5rank) && (card1rank == card2rank))) {
 	fullHouse = true
 }
 
@@ -147,7 +154,7 @@ if (sameSuit && consecutive) {
 } else if (fullHouse) {
 	println "FULL HOUSE!"
 } else if (sameSuit) {
-	println "STRAIGHT!"
+	println "FLUSH!"
 } else if (threeSameRank) {
 	println "THREE OF A KIND!"
 } else if (twoPair) {
