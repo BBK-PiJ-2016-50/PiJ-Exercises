@@ -74,6 +74,7 @@ while (cardCounter <= 5) {
 	cardCounter++
 }
 
+//flags to check what player has got in hand
 boolean sameSuit = false
 boolean consecutive = false
 boolean fourSameRank = false
@@ -136,16 +137,28 @@ if (((card1rank == card2rank && card1rank == card3rank) && (card4rank == card5ra
 }
 
 //check for consecutive cards
+int[] cardArray = new int[5]
+cardArray[0] = Integer.parseInt(card1rank)
+cardArray[1] = Integer.parseInt(card2rank)
+cardArray[2] = Integer.parseInt(card3rank)
+cardArray[3] = Integer.parseInt(card4rank)
+cardArray[4] = Integer.parseInt(card5rank)
 
-println sameSuit
-println consecutive
-println fourSameRank
-println threeSameRank
-println fullHouse
-println twoPair
-println pair
+Arrays.sort(cardArray)
 
-//check for best hand
+int prev = 0
+for (int i = 0; i <= cardArray.length - 1; i++) {
+	if (i == 0) {
+		prev = cardArray[i]
+	} else if (cardArray[i] - prev == 1) {
+		prev = cardArray[i]
+		consecutive = true
+	} else {
+		consecutive = false
+	}
+}
+
+//check for best hand based on flags set above
 print "Your best hand is: "
 if (sameSuit && consecutive) {
 	println "STRAIGHT FLUSH!"
@@ -155,6 +168,8 @@ if (sameSuit && consecutive) {
 	println "FULL HOUSE!"
 } else if (sameSuit) {
 	println "FLUSH!"
+} else if (consecutive) {
+	println "STRAIGHT!"
 } else if (threeSameRank) {
 	println "THREE OF A KIND!"
 } else if (twoPair) {
