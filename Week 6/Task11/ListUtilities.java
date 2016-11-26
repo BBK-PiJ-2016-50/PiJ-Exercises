@@ -5,7 +5,10 @@ public class ListUtilities {
 		IntObj first = null;
 		IntObj current = null;
 		IntObj next = null;
+		IntObj prev = null;
 		
+		
+		//set first item
 		if (list.getFirstItem() == null) {
 			return;
 		} else {
@@ -14,19 +17,35 @@ public class ListUtilities {
 		
 		current = first;
 		next = current.getNextNum();
-
-		while (current.getNextNum() != null) {
-			if (current.getIntValue() <= current.getNextNum().getIntValue()) {
-				current = current.getNextNum();
-			} else {
-				current.getPrevNum().setNextNum(current.getNextNum());
-				next.setPrevNum(current.getPrevNum());
-				current.getNextNum().getNextNum().setPrevNum(current);				
-				current.setNextNum(current.getNextNum().getNextNum());
-				current.setPrevNum(next);
-				next.setNextNum(current);
-			}
+		boolean swapMade = true;
+		while (swapMade) {
+			swapMade = false;
+			while (next != null) {				
+				//check if current value is greater than next value
+				if (current.getIntValue() > next.getIntValue()) {
+					swapMade = true;
+					//if it is then check if prev is null.  Will occur for first item
+					if (prev != null) {
+						IntObj temp = next.getNextNum();
+						prev.setNextNum(next);
+						next.setNextNum(current);
+						current.setNextNum(temp);
+					} else {
+						IntObj temp = next.getNextNum();
+						first = next;
+						next.setNextNum(current);
+						current.setNextNum(temp);
+					}
+					prev = next;
+					next = current.getNextNum();
+				} else {
+					//if value is not greater then move to next num by updating variables
+					prev = current;
+					current = next;
+					next = next.getNextNum();
+				}
 			
+			}
 		}
 	}
 	
