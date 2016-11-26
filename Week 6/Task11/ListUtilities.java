@@ -2,11 +2,11 @@ public class ListUtilities {
 	
 	public static void bubbleSort(LinkedList list) {
 		
+		boolean finished = false;
 		IntObj first = null;
 		IntObj current = null;
 		IntObj next = null;
 		IntObj prev = null;
-		
 		
 		//set first item
 		if (list.getFirstItem() == null) {
@@ -16,14 +16,11 @@ public class ListUtilities {
 		}
 		
 		current = first;
-		next = current.getNextNum();
-		boolean swapMade = true;
-		while (swapMade) {
-			swapMade = false;
-			while (next != null) {				
+		while (!finished) {
+			while (current.getNextNum() != null) {
+				next = current.getNextNum();		
 				//check if current value is greater than next value
 				if (current.getIntValue() > next.getIntValue()) {
-					swapMade = true;
 					//if it is then check if prev is null.  Will occur for first item
 					if (prev != null) {
 						IntObj temp = next.getNextNum();
@@ -44,6 +41,16 @@ public class ListUtilities {
 					current = next;
 					next = next.getNextNum();
 				}
+			
+			current = first;
+			finished = true;
+			while (current.getNextNum() != null) {
+				next = current.getNextNum();
+				if (current.getIntValue() > next.getIntValue()) {
+					finished = false;
+				}
+				current = next;
+			}
 			
 			}
 		}

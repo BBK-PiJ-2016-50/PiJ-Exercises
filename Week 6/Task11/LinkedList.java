@@ -23,9 +23,6 @@ public class LinkedList {
 		
 		do {
 			System.out.println ("Int: " + current.getIntValue());
-			//System.out.println ("next: " + current.getNextNum().getIntValue());
-			//System.out.println ("prev: " + current.getPrevNum().getIntValue());
-			//System.out.println ("");
 			current = current.getNextNum();
 		} while (current != null);
 	}
