@@ -23,6 +23,7 @@ public class ImplementPersonQueue implements PersonQueue {
 		if (firstPerson.getNextPerson() == null) {
 			retrieved = firstPerson;
 			firstPerson = null;
+			System.out.println(retrieved.getName() + " was served");
 			return retrieved;
 		}
 		
