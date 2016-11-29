@@ -3,17 +3,20 @@ public class DoublyLinkedList<T> {
 	private ListItem<T> first = null;
 	private ListItem<T> current = null;
 	
-	public void addToList(ListItem<T> item) {
+	public void addToList(T item) {
+		
+		ListItem<T> newItem = new ListItem<T>(item);
+		
 		if (first == null) {
-			first = item;
+			first = newItem;
 			return;
 		}
 		current = first;
 		while (current.getNext() != null) {
 			current = current.getNext();
 		}
-		current.setNext(item);
-		item.setPrev(current);
+		current.setNext(newItem);
+		newItem.setPrev(current);
 	}
 	
 	public boolean deleteItem(T value) {		
