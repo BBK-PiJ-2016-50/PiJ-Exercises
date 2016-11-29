@@ -7,11 +7,11 @@ public class PhoneLauncher {
 	
 	public void launch() {
 		MobilePhone myPhone = new SmartPhone();
+		myPhone.call("1");
+		myPhone.ringAlarm("ring ring");
+		myPhone.playGame("rubbish game");
+		myPhone.printLastNumbers();
 		SmartPhone sp = (SmartPhone) myPhone; // downcasting
-		sp.call("1");
-		sp.ringAlarm("ring ring");
-		sp.playGame("rubbish game");
-		sp.printLastNumbers();
 		sp.browseWeb("browsing for food");
 		System.out.println("GPS Position: " + sp.findPosition());
 	}
