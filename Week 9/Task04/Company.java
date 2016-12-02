@@ -18,7 +18,7 @@ public class Company {
 		//creates national insurance number list
 		SortedDoublyLinkedList<Integer> niNums = new SortedDoublyLinkedList<>();
 		niNums.addToList(4658634);
-		niNums.addToList(7656878);
+		niNums.addToList(2656878);
 		niNums.addToList(5645645);
 		niNums.addToList(5434546);
 		niNums.addToList(5464575);

@@ -1,7 +1,12 @@
 public class DoublyLinkedList<T> {
 	
-	private ListItem<T> first = null;
-	private ListItem<T> current = null;
+	public ListItem<T> first = null;
+	public ListItem<T> current = null;
+	
+	public DoublyLinkedList() {
+		this.first = null;
+		this.current = null;
+	}
 	
 	public void addToList(T item) {
 		
