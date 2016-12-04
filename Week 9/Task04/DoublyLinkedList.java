@@ -1,7 +1,7 @@
 public class DoublyLinkedList<T> {
 	
-	public ListItem<T> first = null;
-	public ListItem<T> current = null;
+	private ListItem<T> first = null;
+	private ListItem<T> current = null;
 	
 	public DoublyLinkedList() {
 		this.first = null;
@@ -100,6 +100,14 @@ public class DoublyLinkedList<T> {
 		} while (current != null);
 		return counter;
 
+	}
+	
+	public ListItem<T> getFirst() {
+		return first;
+	}
+	
+	public void setFirst(ListItem<T> newFirst) {
+		first = newFirst;
 	}
 
 	
