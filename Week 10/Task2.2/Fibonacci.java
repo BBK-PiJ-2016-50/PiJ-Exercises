@@ -2,7 +2,7 @@ public class Fibonacci {
 	
 	public static void main(String[] args) {
 		Fibonacci launch = new Fibonacci();
-		System.out.println(launch.fibRec(45));
+		System.out.println(launch.fibRec(40));
 		System.out.println(launch.fibIter(40));
 	}
 
@@ -16,7 +16,18 @@ public class Fibonacci {
 	}
 	
 	private int fibIter(int n) {
-		// add code
+		int result = 0;
+		int count = 1;
+		int prev = 0;
+		int next = 1;
+		while (count < n) {
+			System.out.println(result);
+			result = prev + next;
+			prev = next;
+			next = result;
+			count++;
+		}
+		return result;
 	}
 
 
