@@ -22,3 +22,4 @@ public class PhoneLauncher {
 }
 
 //the testPhone method can only call the method declared in the Phone interface
+//other methods could be called within testPhone by down casting
