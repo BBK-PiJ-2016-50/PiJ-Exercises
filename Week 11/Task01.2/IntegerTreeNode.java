@@ -58,6 +58,7 @@ public class IntegerTreeNode {
 		}
 	}
 	
+	
 	public String toString() {
 
 		String result = "[";
@@ -74,7 +75,20 @@ public class IntegerTreeNode {
 		} else {
 			result += "[]";
 		}
+		return result += "]";
 		
+	}
+	
+	public String toStringSimple() {
+
+		String result = "[";
+		result += this.value;
+		if (left != null) {
+			result += left.toStringSimple();
+		}
+		if (right != null) {
+			result += right.toStringSimple();
+		}
 		return result += "]";
 		
 	}

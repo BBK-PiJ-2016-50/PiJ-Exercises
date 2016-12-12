@@ -15,6 +15,7 @@ public class Launcher {
 		System.out.println(tree.getMax());
 		System.out.println(tree.getMin());
 		System.out.println(tree.toString());
+		System.out.println(tree.toStringSimple());
 	}
 	
 }
