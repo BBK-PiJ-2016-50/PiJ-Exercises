@@ -1,3 +1,4 @@
+//generates a random number and then asks the user to guess it
 int numberToGuess = Math.abs(1000 * Math.random())
 int guesses = 1
 boolean guessed = false

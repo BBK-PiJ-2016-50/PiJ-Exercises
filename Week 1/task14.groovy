@@ -1,3 +1,4 @@
+//code prints the first 1000 prime numbers
 println "Displays the first 1000 prime numbers:"
 int totalPrimes = 0
 int currentNumber = 2

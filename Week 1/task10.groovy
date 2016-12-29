@@ -1,3 +1,4 @@
+//outputs whether a sequence of numbers are consecutive regardless of increasing or decreasing
 println "Enter an arbitrarily long sequence of numbers ending in -1"
 String num_consec = ""
 boolean finished = false

@@ -1,3 +1,4 @@
+//prints all primes up to 1000
 println "Displays all prime numbers up to 1000:"
 int globalCount = 2
 while (globalCount <= 1000) {

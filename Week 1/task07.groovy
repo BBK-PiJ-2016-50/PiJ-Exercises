@@ -1,3 +1,4 @@
+//ask user for 3 numbers
 println "Enter three numbers for sorting from lowest to highest"
 print "Enter the first number: "
 String str = System.console().readLine()
@@ -9,6 +10,7 @@ print "Enter the third number: "
 String str3 = System.console().readLine()
 int num3 = Integer.parseInt(str3)
 
+//code sequences numbers for lowest to highest and prints them to screen
 int max = 0
 int med = 0
 int min = 0

@@ -1,3 +1,4 @@
+//prints out the largest number in a sequence of numbers entered by the user ending in -1
 println "Enter an arbitrarily long sequence of numbers ending in -1: "
 int max = 0
 boolean finished = false

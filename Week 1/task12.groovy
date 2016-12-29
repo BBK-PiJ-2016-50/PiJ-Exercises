@@ -1,3 +1,4 @@
+//code prints a number pyramid from 1 to 9
 int counter = 1
 String numbers = ""
 

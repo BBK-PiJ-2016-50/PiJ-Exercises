@@ -1,3 +1,4 @@
+//read in 5 sets of cards and outputs the best score
 println "Enter 5 cards (rank and suit) and see what you got!"
 
 int cardCounter = 1

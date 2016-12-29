@@ -1,3 +1,4 @@
+//asks user for RPS inputs and then stops when one user has won by 3
 println "Enter any series of the following combinations: PP, PR, PS, RP, RR, RS, SP, SR, SS"
 println "The winner is the first to be ahead by more than 3 points"
 int player1Score = 0

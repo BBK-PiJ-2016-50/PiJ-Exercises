@@ -12,6 +12,7 @@ int divisor = 1
 double total = 0
 boolean plusSign = true
 
+//switches between + and - calculations for each ieration of the loop
 while (counter < num) {
 	if (plusSign) {
 		double calc = 4 / divisor

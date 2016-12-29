@@ -1,3 +1,4 @@
+//code prints a number pyramid that is right aligned
 print "Enter a number between 1 and 25 to see a number pyramid: "
 String str = System.console().readLine()
 int num = Integer.parseInt(str)

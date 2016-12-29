@@ -1,3 +1,4 @@
+//outputs whether a sequence of numbers were consectutive and increasing
 println "Enter an arbitrarily long sequence of numbers ending in -1"
 String num_increase = ""
 boolean finished = false
