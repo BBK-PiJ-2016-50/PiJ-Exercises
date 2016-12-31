@@ -1,14 +1,17 @@
 class Integer2 {
 	int value
 	
+	//returns the value of this number as an int, a getter
 	int getValue() {
 		return value
 	}
 	
+	//a setter
 	void setValue() {
 		this.value = value
 	}
 	
+	//returns true if the number is even, false otherwise
 	boolean isEven() {
 		if (value % 2 == 0) {
 			return true
@@ -16,21 +19,25 @@ class Integer2 {
 			return false
 		}
 	}
-
+	
+	//the opposite.
 	boolean isOdd() {
 		return !this.isEven()
 	}
 	
+	//prints the value of the integer on the screen
 	void prettyPrint() {
 		println "The value is: " + value
 	}
 	
+	//returns a String equivalent to the number
 	String toString() {
 		return "" + value
 	}
 	
 }
 
+//code for checking the methods above work
 Integer2 i2 = new Integer2();
 print "Enter a number: ";
 String str = System.console().readLine();

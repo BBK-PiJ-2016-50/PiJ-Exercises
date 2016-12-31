@@ -1,10 +1,6 @@
 //calculate how much must be paid at the end
 //t = c*(1+(r/100))
 //t is total, c is cost, r is rate(%)
-//print total amount to be paid
-//print money to be paid every year
-//print number of years before interest is paid and initial capital remains
-//method for each
 
 print "What is the total amount borrowed for your mortgage? "
 String mtgStr = System.console().readLine()
@@ -16,16 +12,19 @@ print "What is the interest rate? "
 String rateStr = System.console().readLine()
 double rate = Double.parseDouble(rateStr)
 
+//The total amount to be paid
 double totalAmount(double mtg, double rate) {
 	double total = mtg*(1+(rate/100))
 	return total
 }
 
+//The money to be paid every year
 double payPerYear(double total, double yrs) {
 	double perYear = total / yrs
 	return perYear
 }
 
+//The number of years before the interest is paid and only the initial capital remains
 double interestYears(double total, double mtg, double perYear) {
 	double interest = total - mtg
 	return interest / perYear

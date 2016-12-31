@@ -1,6 +1,8 @@
+//take input from user
 print "Enter a decimal or a hexidecimal number: "
 String num = System.console().readLine()
 
+//determine and print out the conversion
 if (num.substring(0,2) == '0x') {
 	println num + " is a hexadecimal number.  It's decimal equivalent is: " + hexadecimal2decimal(num)
 } else {
