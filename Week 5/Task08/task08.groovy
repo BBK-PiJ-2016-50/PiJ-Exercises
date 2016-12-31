@@ -2,6 +2,7 @@ println "Enter employee names and IDs one at a time: "
 
 EmployeeArrays empArry = new EmployeeArrays()
 
+//get the employee name and id and add to array
 boolean finished = false
 while (!finished) {
 	print "Name: "
@@ -21,6 +22,7 @@ while (!finished) {
 	}
 }
 
+//get the names and ids for employees and print them out if name starts with S or if ID is even
 names = empArry.getNames()
 ids = empArry.getIds()
 
