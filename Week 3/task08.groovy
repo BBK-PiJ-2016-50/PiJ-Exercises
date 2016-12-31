@@ -1,3 +1,4 @@
+//solution for reading one per line
 print "Enter some text: "
 String str = System.console().readLine()
 for (count=0; count < str.length(); count++) {

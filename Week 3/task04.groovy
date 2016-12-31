@@ -3,6 +3,7 @@ class Point {
 	double y;
 }
 
+//create coordinates for point 1
 print "Enter first point coordinate x: "
 String str1x = System.console().readLine()
 print "Enter first point coordinate y: "
@@ -11,6 +12,7 @@ Point point1 = new Point()
 point1.x = Double.parseDouble(str1x)
 point1.y = Double.parseDouble(str1y)
 
+//create coordinates for point 2
 print "Enter second point coordinate x: "
 String str2x = System.console().readLine()
 print "Enter second point coordinate y: "
@@ -19,6 +21,7 @@ Point point2 = new Point()
 point2.x = Double.parseDouble(str2x)
 point2.y = Double.parseDouble(str2y)
 
+//create coordinates for point 3
 print "Enter third point coordinate x: "
 String str3x = System.console().readLine()
 print "Enter third point coordinate y: "
@@ -27,6 +30,7 @@ Point point3 = new Point()
 point3.x = Double.parseDouble(str3x)
 point3.y = Double.parseDouble(str3y)
 
+//determine which two points are closest and print result on screen
 double dist1and2 = Math.sqrt(((point1.x - point1.y)**2) + ((point2.x - point2.y)**2))
 double dist1and3 = Math.sqrt(((point1.x - point1.y)**2) + ((point3.x - point3.y)**2))
 double dist2and3 = Math.sqrt(((point2.x - point2.y)**2) + ((point3.x - point3.y)**2))

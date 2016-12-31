@@ -1,6 +1,6 @@
 //not completely happy with this solution
 
-print "Enter a number with comma's a decimal dots: "
+print "Enter a number with comma's as decimal dots: "
 String str = System.console().readLine()
 
 // remove dot and comma and store dot's place

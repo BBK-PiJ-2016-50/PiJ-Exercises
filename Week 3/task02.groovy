@@ -1,3 +1,4 @@
+//ask user for two numbers
 print "Enter first number: "
 String str1 = System.console().readLine()
 double num1 = Double.parseDouble(str1)
@@ -8,8 +9,8 @@ double num2 = Double.parseDouble(str2)
 println "Select from one of the following options (type the number): "
 println "1.Add\n2.Subtract\n3.Multiply\n4.Divide"
 
+//perform calculation of two numbers based on selected operation
 boolean finished = false
-
 while (!finished) {
 
 	String str3 = System.console().readLine()

@@ -1,3 +1,4 @@
+//get text input from user
 print "Enter a mathematical operation (4 basic ones) and two operands: "
 String input = System.console().readLine()
 
@@ -12,7 +13,7 @@ for (count=0; count < input.length(); count++) {
 	}
 }
 
-//find the values either side of operator and remove spaces. Assign
+//find the values either side of operator and remove spaces
 String oprnd1 = (input.substring(0, opPos)).replace(" ", "")
 String oprnd2 = (input.substring(opPos + 1)).replace(" ", "")
 

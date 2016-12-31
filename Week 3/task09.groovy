@@ -1,3 +1,4 @@
+//solution for counting letter provided by user
 print "Enter some text: "
 String sentence = System.console().readLine()
 print "Enter a letter to count: "
