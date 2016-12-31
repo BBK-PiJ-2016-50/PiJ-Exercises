@@ -1,7 +1,3 @@
-
-
-
-
 boolean run = true
 
 while (run) {
@@ -61,6 +57,7 @@ while (run) {
 	
 }
 
+//asks the user whether they want to play again
 boolean tryAgain() {
 	print "Would you like to play again? y/n: "
 	String choice = System.console().readLine()

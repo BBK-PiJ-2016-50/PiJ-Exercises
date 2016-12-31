@@ -6,6 +6,7 @@ public class Target {
 	private int jRandom;  //high or low
 	private int kRandom;  //short or long
 	
+	//constructor for creating the target
 	public Target(int targetSize) {
 		this.targetSize = targetSize;
 		target = new int[targetSize][targetSize][targetSize];
@@ -19,6 +20,7 @@ public class Target {
 		init();
 	}
 	
+	//used in constructor to initialise target variables and create random target
 	private void init() {
 		iRandom = (int) Math.abs(targetSize * Math.random());
 		jRandom = (int) Math.abs(targetSize * Math.random());
@@ -26,6 +28,7 @@ public class Target {
 		this.target[iRandom][jRandom][kRandom] = 1;
 	}
 	
+	//determines whether coordinates are correct or not
 	public Result fire(int i, int j, int k) {
 		if (i == iRandom && j == jRandom && k == kRandom) {
 			return Result.HIT;
