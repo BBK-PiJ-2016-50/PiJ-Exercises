@@ -1,4 +1,4 @@
-public class TreeIntSet {
+public class TreeIntSet implements IntSet {
 	
 	private int value;
 	private TreeIntSet left;
