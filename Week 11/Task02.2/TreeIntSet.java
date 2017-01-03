@@ -66,7 +66,7 @@ public class TreeIntSet implements IntSet {
 	
 	public String toString() {
 		String result = "";
-		result += this.value;
+		result += this.value + ", ";
 		if (left != null) {
 			result += left.toString();
 		}
