@@ -6,7 +6,7 @@ public class Launcher {
 	}
 	
 	public void launch() {
-		ListIntSet list = new ListIntSet();
+		IntSet list = new ListIntSet();
 		list.add(3);
 		list.add(4);
 		list.add(5);
