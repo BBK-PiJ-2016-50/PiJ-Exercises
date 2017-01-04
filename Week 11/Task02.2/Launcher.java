@@ -6,7 +6,7 @@ public class Launcher {
 	}
 	
 	public void launch() {
-		TreeIntSet tree = new TreeIntSet(2);
+		IntSet tree = new TreeIntSet(2);
 		tree.add(3);
 		tree.add(4);
 		tree.add(5);
