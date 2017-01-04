@@ -1,7 +1,7 @@
 public class HospitalManager {
 
 	private Patient firstPatient = null;
-	private Patient current= null;
+	private Patient current = null;
 	
 	public void addPatient(Patient newPatient) {
 		if (firstPatient == null) {
@@ -52,8 +52,7 @@ public class HospitalManager {
 		Patient current = firstPatient;
 		
 		do {
-			System.out.println ("Name: "+current.getName()+"\t Age: "+current.getAge()+"\t Illness: "
-			+current.getIllness());
+			System.out.println ("Name: " + current.getName() + "\t Age: " + current.getAge() + "\t Illness: " + current.getIllness());
 			current = current.getNextPatient();
 		} while (current != null);
 
