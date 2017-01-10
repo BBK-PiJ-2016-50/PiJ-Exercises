@@ -5,9 +5,18 @@ public class HashUtilitiesTest {
 	
 	@Test
 	public void testShortHashWorks() {
-		int num = 436546;
-		int shortHash = HashUtilities.shortHash(num);
-		assertTrue(shortHash < 1000);
+		int count = 0;
+		boolean stop = false;
+		while (!stop) {
+			int randInt = (int) Math.abs(10000 * Math.random());
+			int smallHash = HashUtilities.shortHash(randInt);
+			assertTrue(smallHash < 1000);
+			count++;
+			if (count == 2000) {
+				stop = true;
+			}
+		}
+
 	}
 	
 	@Test
