@@ -6,12 +6,28 @@ public class LibrariesTest {
 	private Users Bob;
 	private Users Tim;
 	private Library newLib;
+	private Book newBook;
 
 	@Before
 	public void buildUp() {
 		Bob = new UsersImpl("Bob");
 		Tim = new UsersImpl("Tim");
 		newLib = new LibraryImpl("bbk lib", 5);
+		newBook = new BookImpl("Narnia", "Lewis");
+	}
+	
+	@Test
+	public void testsGetTitle() {
+		String output = newBook.getTitle();
+		String expected = "Narnia";
+		assertEquals(expected, output);
+	}
+	
+	@Test
+	public void testsGetAuthor() {
+		String output = newBook.getAuthor();
+		String expected = "Lewis";
+		assertEquals(expected, output);
 	}
 	
 	@Test
@@ -63,6 +79,38 @@ public class LibrariesTest {
 		int output = newLib.getMaxNumberOfBooks();
 		int expected = 5;
 		assertEquals(expected, output);
+	}
+	
+	@Test
+	public void testsAddBookAndTakeBook() {
+		newLib.addBook("book1", "author1");
+		String output = newLib.takeBook("book1").getTitle();
+		String expected = "book1";
+		assertEquals(expected, output);
+	}
+	
+	@Test
+	public void testsTakeBookNotAvailable() {
+		newLib.addBook("book1", "author1");
+		newLib.takeBook("book1");
+		Book output = newLib.takeBook("book1");
+		assertNull(output);
+	}
+	
+	@Test
+	public void testsNoExistentBook() {
+		newLib.addBook("book1", "author1");
+		Book output = newLib.takeBook("book2");
+		assertNull(output);
+	}
+	
+	@Test
+	public void testsReturnBook() {
+		newLib.addBook("book1", "author1");
+		Book book = newLib.takeBook("book1");
+		newLib.returnBook(book);
+		boolean output = book.isTaken();
+		assertFalse(output);
 	}
 
 }

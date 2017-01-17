@@ -3,11 +3,21 @@ public interface Book {
 	/**
       * Gets author
 	  */
-	String getAuthor();
+	public String getAuthor();
   
 	/**
       * Gets title
 	  */
-	String getTitle();
+	public String getTitle();
+	
+	/**
+	  * returns true if the book is available, false otherwise
+	  */
+	public boolean isTaken();
+	
+	/**
+	  * sets to true if the book is available, false otherwise
+	  */
+	public void setTaken(boolean taken);
 
 }

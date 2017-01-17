@@ -3,21 +3,21 @@ public interface Users {
 	/**
 	  * Gets name
 	  */
-	String getName();
+	public String getName();
 	
 	/**
       * Gets Library ID
 	  */	
-	int getLibraryID();
+	public int getLibraryID();
 	
 	/**
       * Registers user at library and returns Library ID
 	  */	
-	int register(Library library);
+	public int register(Library library);
 	
 	/**
       * Gets library user registered with
 	  */		
-	String getLibrary();
+	public String getLibrary();
 	
 }
