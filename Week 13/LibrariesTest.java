@@ -112,5 +112,36 @@ public class LibrariesTest {
 		boolean output = book.isTaken();
 		assertFalse(output);
 	}
+	
+	@Test
+	public void testsGetReaderCount() {
+		Bob.register(newLib);
+		Tim.register(newLib);
+		int output = newLib.getReaderCount();
+		int expected = 2;
+		assertEquals(expected, output);
+	}
+
+	@Test
+	public void testsGetBookCount() {
+		newLib.addBook("book1", "author1");
+		newLib.addBook("book2", "author2");
+		newLib.addBook("book3", "author3");
+		int output = newLib.getBookCount();
+		int expected = 3;
+		assertEquals(expected, output);
+	}
+	
+	@Test
+	public void testsGetBorrowedCount() {
+		newLib.addBook("book1", "author1");
+		newLib.addBook("book2", "author2");
+		newLib.addBook("book3", "author3");
+		newLib.takeBook("book1");
+		newLib.takeBook("book3");
+		int output = newLib.getBookBorrowedCount();
+		int expected = 2;
+		assertEquals(expected, output);
+	}
 
 }

@@ -30,4 +30,20 @@ public interface Library {
 	  * Marks the book as not taken
 	  */
 	public void returnBook(Book book);
+	
+	/**
+	  * returns the number of users registered in this library
+	  */
+	public int getReaderCount();
+	
+	/**
+	  * returns the number of books in this library
+	  */
+	public int getBookCount();
+	
+	/**
+	  * returns the number of borrowed books in this library
+	  */
+	public int getBookBorrowedCount();
+	
 }
