@@ -1,0 +1,5 @@
+All 4 cases execute lines 01-9
+userInput 0: 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 24, 25
+userInput 2: 10, 11, 12, 13, 14, 15, 16, 17, 24, 25
+userInput 4: 10, 11, 12, 13, 24, 25
+userInput 6: 10, 11, 24, 25
