@@ -2,25 +2,38 @@ public class TenNumbers {
 
   public static void main(String[] args) {
     TenNumbers tn = new TenNumbers();
-	tn.launch();
+	  tn.launch();
   }
+	
+	private int numNums;
+	private int num;
   
   private void launch() {
-    String input = System.console().readLine("How many numbers?");
-    int counter = 0;
-	int total = 0;
-	while(counter < 10) {
-	  try {
-	    String input = System.console().readLine();
-	    int num = Integer.parseInt(input);
-		counter++;
-		total += num;
-	  } catch (NumberFormatException ex) {
-	    System.out.println("Not a number.  Try again...");
+		double counter = 0;
+	  double total = 0;
+		int numNums = getNum("How many numbers?");
+	  while(counter < numNums) {
+	    int num = getNum("");
+			counter++;
+		  total += num;
 	  }
-	}
-	int mean = total / counter;
-	System.out.println("The mean of the 10 numbers is " + mean);
+		double mean = total / counter;
+	  System.out.println("The mean of the " + numNums + " numbers is " + mean);
   }
+	
+	private int getNum(String question) {
+		boolean correct = false;
+		while (!correct) {
+			try {
+		    String input = System.console().readLine(question);
+		    int num = Integer.parseInt(input);
+				correct = true;
+				return num;
+			} catch (NumberFormatException ex) {
+	      System.out.println("Not a number.  Try again...");
+			}
+		}
+		return num;
+	}
 
 }
