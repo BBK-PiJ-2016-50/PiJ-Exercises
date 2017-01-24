@@ -1,0 +1,2 @@
+The first exception is too general
+The more specific exception should be listed first otherwise it will never be called
