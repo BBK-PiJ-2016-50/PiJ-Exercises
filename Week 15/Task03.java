@@ -5,22 +5,23 @@ public class Task03 {
 
   public static void main(String[] args) {
     Task03 script = new Task03();
-	script.hailstone(50);
+	  System.out.println(script.hailstone(547324));
   }
   
   private List<Integer> memList = new ArrayList<>();
+  private int num;
   
   private List<Integer> hailstone(int n) {
     if (n == 1) {
-	  return memList;
-	}
+	    return memList;
+	  }
     if (n % 2 == 0) {
-	  memList.add(n);
-	  hailstone(n / 2);
-	} else {
-	  memList.add(n);
-	  hailstone((3*n) + 1);
-	}
+      num = n / 2;
+	  } else {
+	    num = (3 * n) + 1;
+	  }
+    memList.add(num);
+    hailstone(num);
     return memList;
   }
 
