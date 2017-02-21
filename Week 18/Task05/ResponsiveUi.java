@@ -1,34 +1,47 @@
-public class ResponsiveUi implements Runnable {
+import java.util.List;
+import java.util.ArrayList;
+
+public class ResponsiveUi {
   
   private int duration;
-  
-  public ResponsiveUi(int duration) {
-    this.duration = duration;
-  }
-
-  @Override
-  public void run(int duration) {
-    try {
-	  Thread.sleep(duration);
-	} catch (InterruptedException ex) {
-	  ex.printStackTrace();
-	}
-  }
+  private int taskCounter = 0;
+  private List<Integer> completed = new ArrayList<>();
 
   public static void main(String[] args) {
     ResponsiveUi rui = new ResponsiveUi();
+    rui.launch();
   }
-  
   
   private void launch() {
     for (int i = 0; i < 10; i++) {
-	  System.out.print("Enter the duration (in ms) for task " + i + ": ");
-	  int duration = Integer.parseInt(System.console().readLine());
-	  Runnable r = new ResponsiveUi();
-	  Thread t = new Thread(r);
-	  t.start();
-	  System.out.println("Finished tasks: " + i);
-	}
+      tasks();
+	    System.out.print("Enter the duration (in ms) for task " + i + ": ");
+      String str = System.console().readLine();
+      int duration = Integer.parseInt(str);
+      Runnable r = new NewThread(i, duration, this);
+      Thread t = new Thread(r);
+      t.start();
+      taskCounter++;
+	  }
+    tasks();
+  }
+  
+  public synchronized void isFinished(int id) {
+    completed.add(id);
+    taskCounter--;
+    notifyAll();
+  }
+  
+  private synchronized void tasks() {
+    if (completed.size() == 0) {
+      return;
+    }
+    System.out.print("Finished tasks: ");
+    for (Integer endedTask : completed) {
+      System.out.print(endedTask + " ");
+    }
+    System.out.println();
+    completed = new ArrayList<>();
   }
 
 }
