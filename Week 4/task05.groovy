@@ -37,7 +37,7 @@ class Point {
 		return clone
 	}
 	
-	returns a copy of the current point with the coordinates multiplied by −1
+	//returns a copy of the current point with the coordinates multiplied by −1
 	Point opposite() {
 		Point opp = clone()
 		opp.x = opp.x * -1
