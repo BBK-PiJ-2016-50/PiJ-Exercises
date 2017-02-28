@@ -7,7 +7,7 @@ public class ExecutorImplExt extends ExecutorImpl implements Executor {
   }
   
   public int getMaxPendingTime() {
-    return tasks.getSize() * 1000;
+    return tasks.size() * 1000;
   }
 
 }
