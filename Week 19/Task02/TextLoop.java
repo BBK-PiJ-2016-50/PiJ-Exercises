@@ -1,3 +1,5 @@
+package src;
+
 import java.util.concurrent.*;
 
 public class TextLoop implements Runnable {
