@@ -2,10 +2,10 @@ import java.util.*;
 import java.util.stream.*;
 import java.util.stream.Collectors;
 
-public class task03 {
+public class task03a {
   
   public static void main(String[] args) {
-    task03 script = new task03();
+    task03a script = new task03a();
     script.launch();
   }
   
