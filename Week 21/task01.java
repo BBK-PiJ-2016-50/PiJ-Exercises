@@ -21,7 +21,7 @@ public class task01 {
     List<Dish> dishes = Arrays.asList(fish, pork, curry, pasta, beef, muesli, chicken, beans);
     
     Stream<Dish> myStream = dishes.stream();
-    List<Dish> filtered = myStream.filter((Dish d) -> d.getType() == Dish.Type.MEAT).limit(2).collect(Collectors.toList());
+    List<Dish> filtered = myStream.filter((d) -> d.getType() == Dish.Type.MEAT).limit(2).collect(Collectors.toList());
     System.out.println(filtered);
   }
   
