@@ -19,6 +19,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import java.util.Comparator;
+import java.util.function.Function;
+import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.counting;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -135,9 +140,11 @@ public class Exercises {
 
 
     @Test
-    @Ignore
     public void listOfAllWords() throws IOException {
-        List<String> output = null; /* TODO */
+        List<String> output = reader.lines()
+                                    .flatMap(l -> Stream.of(l.split(REGEXP)))
+                                    .filter(w -> w.length() > 0)
+                                    .collect(Collectors.toList());
 
         assertEquals(
                 Arrays.asList(
@@ -162,9 +169,14 @@ public class Exercises {
     // Exercise 8: Create a list containing the words, lowercased, in alphabetical order.
 
     @Test
-    @Ignore
     public void sortedLowerCase() throws IOException {
-        List<String> output = null; /* TODO */
+        List<String> output = reader.lines()
+                                    .flatMap(l -> Stream.of(l.split(REGEXP)))
+                                    .filter(w -> w.length() > 0)
+                                    .map(w -> w.toLowerCase())
+                                    .sorted()
+                                    .collect(Collectors.toList());
+                                    
 
         assertEquals(
                 Arrays.asList(
@@ -193,9 +205,15 @@ public class Exercises {
 
 
     @Test
-    @Ignore
     public void sortedLowerCaseDistinctByLengthThenAlphabetically() throws IOException {
-        List<String> output = null; /* TODO */
+        List<String> output = reader.lines()
+                                    .flatMap(l -> Stream.of(l.split(REGEXP)))
+                                    .filter(w -> w.length() > 0)
+                                    .map(w -> w.toLowerCase())
+                                    .distinct()
+                                    .sorted()
+                                    .sorted(Comparator.comparing(String::length))
+                                    .collect(Collectors.toList());
 
         assertEquals(
                 Arrays.asList(
@@ -222,9 +240,11 @@ public class Exercises {
 
 
     @Test
-    @Ignore
     public void mapLengthToWordList() throws IOException {
-        Map<Integer, List<String>> map = null; /* TODO */
+        Map<Integer, List<String>> map = reader.lines()
+                                               .flatMap(l -> Stream.of(l.split(REGEXP)))
+                                               .filter(w -> w.length() > 0)
+                                               .collect(groupingBy(String::length));
 
         assertEquals(6, map.get(7).size());
         assertEquals(Arrays.asList("increase", "ornament"), map.get(8));
@@ -237,10 +257,12 @@ public class Exercises {
     // number of occurrences of each word. Don't worry about upper case and
     // lower case.
 
-  @Test
-    @Ignore
+    @Test
     public void wordFrequencies() throws IOException {
-        Map<String, Long> map = null; /* TODO */
+        Map<String, Long> map = reader.lines()
+                                      .flatMap(l -> Stream.of(l.split(REGEXP)))
+                                      .filter(w -> w.length() > 0)
+                                      .collect(groupingBy(Function.identity(), counting()));
 
         assertEquals(2L, (long) map.get("tender"));
         assertEquals(6L, (long) map.get("the"));
@@ -262,9 +284,11 @@ public class Exercises {
 // with a value of [bazz] (a one-element list of String).
 
     @Test
-    @Ignore
     public void nestedGrouping() throws IOException {
-        Map<String, Map<Integer, List<String>>> map = null; /* TODO */
+        Map<String, Map<Integer, List<String>>> map = reader.lines()
+                                                            .flatMap(l -> Stream.of(l.split(REGEXP)))
+                                                            .filter(w -> w.length() > 0)
+                                                            .collect(groupingBy(w -> w.substring(0,1), groupingBy(String::length)));
 
         assertEquals("[From, Feed]", map.get("F").get(4).toString());
         assertEquals("[by, be, by]", map.get("b").get(2).toString());
